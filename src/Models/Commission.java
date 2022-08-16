@@ -50,4 +50,27 @@ public class Commission {
         return this.commission;
     }
 
+    public int getTotalLocks() {
+        return totalLocks;
+    }
+
+    public void setTotalLocks(int totalLocks) {
+        this.totalLocks = totalLocks;
+    }
+
+    public int getTotalStocks() {
+        return totalStocks;
+    }
+
+    public void setTotalStocks(int totalStocks) {
+        this.totalStocks = totalStocks;
+    }
+
+    public int getTotalBarrales() {
+        return totalBarrales;
+    }
+
+    public void setTotalBarrales(int totalBarrales) {
+        this.totalBarrales = totalBarrales;
+    }
 }
