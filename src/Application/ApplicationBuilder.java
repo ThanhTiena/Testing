@@ -3,28 +3,28 @@ package Application;
 import java.util.Scanner;
 
 public class ApplicationBuilder {
-    private final ApplicationBuilder builder = new ApplicationBuilder();
+    private static ApplicationBuilder instance = new ApplicationBuilder();
     private Scanner scanner = new Scanner(System.in);
 
-    public ApplicationBuilder getInstance(){
-        return this;
+    public static ApplicationBuilder getInstance(){
+        return instance;
     }
 
     public void run() {
         int actionNumber = 0;
         do {
-            actionNumber = scanner.nextInt();
             System.out.println(showMenu());
+            actionNumber = scanner.nextInt();
             doAction(actionNumber);
-        } while (actionNumber == 3);
+        } while (actionNumber != 3);
     }
 
     private String showMenu(){
-        String menu = "---------------------";
-        menu += "Welcome to Testing System";
-        menu += "1. Triangle";
-        menu += "2. Commission";
-        menu += "3. Exit";
+        String menu = "---------------------\n";
+        menu += "Welcome to Testing System\n";
+        menu += "1. Triangle\n";
+        menu += "2. Commission\n";
+        menu += "3. Exit\n";
         menu += "---------------------";
         return menu;
     }
