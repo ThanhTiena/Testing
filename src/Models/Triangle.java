@@ -26,8 +26,7 @@ public class Triangle {
         boolean isOutOfRange =  (min <= side1) && (side1 <= max) ||
                                 (min <= side2) && (side2 <= max) ||
                                 (min <= side3) && (side3 <= max);
-
-        if (isOutOfRange) {
+        if (!isOutOfRange) {
             return "OUT_OF_RANGE";
         }
 

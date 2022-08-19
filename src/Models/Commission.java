@@ -1,7 +1,7 @@
 package Models;
 
 public class Commission {
-    private int totalLocks, totalStocks, totalBarrales;
+    private double totalLocks, totalStocks, totalBarrales;
     private double lockSales, stockSales, barraleSale, commission;
     /* default value for testing range */
     private double lockPrice = ValueDefault.COMMISSION_LOCK_COST;
@@ -16,7 +16,7 @@ public class Commission {
     private final double minBarrale = ValueDefault.COMMISSION_BARRALE_MIN_SIZE;
     private final double maxBarrale = ValueDefault.COMMISSION_BARRALE_MAX_SIZE;
 
-    public Commission(int locks, int stocks, int barrales) {
+    public Commission(double locks, double stocks, double barrales) {
         this.totalLocks = locks;
         this.totalStocks = stocks;
         this.totalBarrales = barrales;
@@ -35,7 +35,7 @@ public class Commission {
                 (minStock <= totalStocks) && (totalStocks <= maxStock) ||
                 (minBarrale <= totalBarrales) && (totalBarrales <= maxBarrale);
 
-        if (isOutOfRange) return 0.0;
+        if (!isOutOfRange) return 0.0;
 
         double totalSales = calculateSale();
         if (totalSales > 1800) {
@@ -50,7 +50,7 @@ public class Commission {
         return this.commission;
     }
 
-    public int getTotalLocks() {
+    public double getTotalLocks() {
         return totalLocks;
     }
 
@@ -58,7 +58,7 @@ public class Commission {
         this.totalLocks = totalLocks;
     }
 
-    public int getTotalStocks() {
+    public double getTotalStocks() {
         return totalStocks;
     }
 
@@ -66,7 +66,7 @@ public class Commission {
         this.totalStocks = totalStocks;
     }
 
-    public int getTotalBarrales() {
+    public double getTotalBarrales() {
         return totalBarrales;
     }
 

@@ -1,5 +1,10 @@
 package Application;
 
+import Test.CommissionBVA;
+import Test.CommissionRobustBVA;
+import Test.TriangleTestPrepareBVA;
+import Test.TriangleTestPrepareRBVA;
+
 import java.util.Scanner;
 
 public class ApplicationBuilder {
@@ -46,10 +51,18 @@ public class ApplicationBuilder {
         }
     }
     private void testTriangle(){
-        System.out.println("testing Triangle is running");
+        System.out.println("Testing Triangle is running");
+        TriangleTestPrepareBVA test = new TriangleTestPrepareBVA();
+        test.createTest();
+        TriangleTestPrepareRBVA test1 = new TriangleTestPrepareRBVA();
+        test1.createTest();
     }
 
     private void testCommission(){
         System.out.println("testing commission is running");
+        CommissionBVA test = new CommissionBVA();
+        test.createTest();
+        CommissionRobustBVA test1 =new CommissionRobustBVA();
+        test1.createTest();
     }
 }
